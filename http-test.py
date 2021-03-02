@@ -1,5 +1,4 @@
-#syntaxis
-# http-test.py testUrl numberOfRequests max_workers getRequestTimeout
+#Run Syntax: http-test.py testUrl numberOfRequests max_workers getRequestTimeout
 import logging
 import sys
 import requests
@@ -10,9 +9,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 logging.basicConfig(filename='log.txt', level=logging.INFO, format='%(asctime)s %(message)s')
 
 global numberOfRequests, workerNumber, respTimeDict
-
 respTimeDict = [0]
-
 
 #Get arguments from command line
 testUrl = str(sys.argv[1])
@@ -29,15 +26,13 @@ def download_file(url, file_name):
 
         open(f'results//{file_name}.json', 'wb').write(html.content)
         logging.debug("response time = " + str(html.elapsed.total_seconds()) + " seconds " + " result = " + str(html.status_code))
-
         respTimeDict.append(html.elapsed.total_seconds())
-
         return html.status_code
+
     except requests.exceptions.RequestException as e:
         respTimeDict.append(getRequestTimeout)
         logging.debug(e)
         return e
-
 
 def runner():
     threads = []
@@ -55,11 +50,8 @@ def runner():
             if str(task.result()) != "200":
                 errorCount += 1
 
-
 startTestTime = datetime.now()
 runner()
-
-
 
 #Logging Test resultspy
 logging.info(">>>>>>>>> TEST RESULTS >>>>>>>>>>>>>>> ")
