@@ -18,6 +18,7 @@ http-test.py testUrl numberOfRequests max_workers getRequestTimeout
 
 ## Using exe-file in Windows
 For simplicity, can be used with the http-test.exe that was created with "pyinstaller"
+[http-test.7z](https://github.com/ivshof/HTTP-tester-tool/blob/master/http-test.py)
 
 Usage example is the same as with py-file:
 ```javascript
@@ -25,6 +26,7 @@ http-test.exe testUrl numberOfRequests max_workers getRequestTimeout
 ```
 
 Also can be used with windows bat-files, to create semi auto tests:
+Check 'run-test.bat' from archive.
 ```javascript
 http-test.exe https://www.google.com/ 5000 10 10 %*
 echo Waiting For Three 3 minutes... 
