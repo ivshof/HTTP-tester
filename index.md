@@ -3,26 +3,21 @@
 This is a test tool for creating a flood of GET HTTP requests to check web-host capabilities.
 Originally created for testing WordPress installation on Azure VMs.
 
-You can use the [editor on GitHub](https://github.com/ivshof/HTTP-tester/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+Multithreading powered by "concurrent.futures" and "ThreadPoolExecutor" particularly.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### How to use
 
 ```markdown
-Syntax highlighted code block
+http-test.py testUrl numberOfRequests max_workers getRequestTimeout
 
-# Header 1
-## Header 2
-### Header 3
+# Parameters
+- testUrl - test address, like "https://github.com/"
+- numberOfRequests - how many requests in total will be send
+- max_workers - number of parallel requests (threads)
+- getRequestTimeout - connection timeout
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
 
 **Bold** and _Italic_ and `Code` text
 
