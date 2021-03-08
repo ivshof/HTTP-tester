@@ -5,9 +5,10 @@ Powered by "concurrent.futures" and "ThreadPoolExecutor" particularly.
 
 ## How to use
 
+```javascript
 http-test.py testUrl numberOfRequests max_workers getRequestTimeout
-
-Parameters
+```
+##Parameters
 
 - testUrl: host name, like "https://www.google.com/"
 - numberOfRequests: total number of request
