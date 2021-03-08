@@ -8,7 +8,7 @@ Powered by "concurrent.futures" and "ThreadPoolExecutor" particularly.
 ```javascript
 http-test.py testUrl numberOfRequests max_workers getRequestTimeout
 ```
-##Parameters
+## Parameters
 
 - testUrl: host name, like "https://www.google.com/"
 - numberOfRequests: total number of request
@@ -16,5 +16,25 @@ http-test.py testUrl numberOfRequests max_workers getRequestTimeout
 - getRequestTimeout: timeout for each request
 
 
-#Using in Windows
+# Using in Windows
 For simplicity, can be used with the http-test.exe that was created with "pyinstaller"
+
+Usage example is the same as with py-file:
+```javascript
+http-test.exe testUrl numberOfRequests max_workers getRequestTimeout
+```
+
+Also can be used with windows bat-files, to create semi auto tests:
+```javascript
+http-test.exe https://www.google.com/ 5000 10 10 %*
+echo Waiting For Three 3 minutes... 
+TIMEOUT /T 180 /NOBREAK
+
+http-test.exe https://www.google.com/ 5000 20 10 %*
+echo Waiting For Three 3 minutes... 
+TIMEOUT /T 180 /NOBREAK
+
+http-test.exe https://www.google.com/ 5000 30 10 %*
+echo Waiting For Three 3 minutes... 
+TIMEOUT /T 180 /NOBREAK
+```
