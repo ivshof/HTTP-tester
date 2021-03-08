@@ -16,7 +16,7 @@ http-test.py testUrl numberOfRequests max_workers getRequestTimeout
 - getRequestTimeout: timeout for each request
 
 
-# Using in Windows
+## Using exe-file in Windows
 For simplicity, can be used with the http-test.exe that was created with "pyinstaller"
 
 Usage example is the same as with py-file:
