@@ -1,4 +1,7 @@
-## Welcome to GitHub Pages
+## Multi tread simple HTTP testing tool
+
+This is a test tool for creating a flood of GET HTTP requests to check web-host capabilities.
+Originally created for testing WordPress installation on Azure VMs.
 
 You can use the [editor on GitHub](https://github.com/ivshof/HTTP-tester/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
