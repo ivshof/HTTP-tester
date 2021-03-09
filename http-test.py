@@ -20,10 +20,13 @@ getRequestTimeout = float(sys.argv[4])
 logging.info(">>>>> Starting HTTP GET STRESS TEST >>>>>> ")
 logging.info("Input parameters: test URL  = %s,  numberOfRequests = %i, workerNumber = %i, getRequestTimeout = %f", testUrl, numberOfRequests, workerNumber, getRequestTimeout)
 
+
+# Using requests.get to create HTTP request
 def download_file(url, file_name):
     try:
-        html = requests.get(url, stream=True, timeout=getRequestTimeout) # set timeout for get request 5 seconds
+        html = requests.get(url, stream=True, timeout=getRequestTimeout)
 
+        # Save obtained data in json file in "results: directory
         open(f'results//{file_name}.json', 'wb').write(html.content)
         logging.debug("response time = " + str(html.elapsed.total_seconds()) + " seconds " + " result = " + str(html.status_code))
         respTimeDict.append(html.elapsed.total_seconds())
@@ -35,8 +38,8 @@ def download_file(url, file_name):
         return e
 
 def runner():
-    threads = []
     global errorCount
+    threads = []
     errorCount = 0
     with ThreadPoolExecutor(max_workers=workerNumber) as executor:
         count = 0
@@ -50,10 +53,11 @@ def runner():
             if str(task.result()) != "200":
                 errorCount += 1
 
+
 startTestTime = datetime.now()
 runner()
 
-#Logging Test resultspy
+#Logging Test results
 logging.info(">>>>>>>>> TEST RESULTS >>>>>>>>>>>>>>> ")
 EndTestTime = datetime.now()
 TestTime = EndTestTime - startTestTime
@@ -69,5 +73,3 @@ logging.info("****************")
 #Details
 #https://www.tutorialspoint.com/python/python_command_line_arguments.htm
 #https://creativedata.stream/multi-threading-api-requests-in-python/
-
-#Test comment
