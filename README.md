@@ -43,3 +43,8 @@ http-test.exe https://www.google.com/ 5000 30 10 %*
 echo Waiting For Three 3 minutes... 
 TIMEOUT /T 180 /NOBREAK
 ```
+
+
+Additional resources that were used in code:
+#https://www.tutorialspoint.com/python/python_command_line_arguments.htm
+#https://creativedata.stream/multi-threading-api-requests-in-python/
