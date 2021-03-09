@@ -15,10 +15,13 @@ http-test.py testUrl numberOfRequests max_workers getRequestTimeout
 - max_workers: max parallel tasks (thread)
 - getRequestTimeout: timeout for each request
 
+# Note
+As script saves received data in "results" directoity, such folder should be created.
+
 
 ## Using exe-file in Windows
 For simplicity, can be used with the http-test.exe that was created with "pyinstaller"
-[http-test.7z](https://github.com/ivshof/HTTP-tester-tool/blob/master/http-test.py)
+[http-test.7z](https://github.com/ivshof/HTTP-tester-tool/blob/master/http-test.7z)
 
 Usage example is the same as with py-file:
 ```javascript
