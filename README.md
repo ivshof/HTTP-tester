@@ -11,7 +11,7 @@ http-test.py testUrl numberOfRequests max_workers getRequestTimeout
 ## Parameters
 
 - testUrl: host name, like "https://www.google.com/"
-- numberOfRequests: total number of request
+- numberOfRequests: total number of requests
 - max_workers: max parallel tasks (thread)
 - getRequestTimeout: timeout for each request
 
