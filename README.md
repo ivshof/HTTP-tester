@@ -46,5 +46,7 @@ TIMEOUT /T 180 /NOBREAK
 
 
 Additional resources that were used in code:
+```javascript
 #https://www.tutorialspoint.com/python/python_command_line_arguments.htm
 #https://creativedata.stream/multi-threading-api-requests-in-python/
+```
